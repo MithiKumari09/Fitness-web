@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join now</title>
+    <style>
+
+        body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+       .container {
+      position: relative;
+      z-index: 2;
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      text-align: center;
+    }
+
+    /* Form Elements */
+    .container h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .container input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .container button {
+      width: 100%;
+      padding: 10px;
+      background: #6a11cb;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+     .container button:hover {
+      background: #2575fc;
+    }
+    </style>
+</head>
+<body>
+    <form class="container" method="POST" action="http://localhost:5000/signup">
+    <h1 style="display: flex; justify-content: center;">Signup</h1>
+    <div style="display: flex; justify-content: center;">
+  <input type="text" name="firstName" placeholder="First Name" required>
+  </div>
+  <div style="display: flex; justify-content: center;">
+  <input type="text" name="lastName" placeholder="Last Name" required>
+  </div>
+  <div style="display: flex; justify-content: center;">
+  <input type="email" name="email" placeholder="Email" required>
+  </div>
+  <div style="display: flex; justify-content: center;">
+  <input type="password" name="password" placeholder="Password" required>
+  </div>
+  <!-- <div style="display: flex; justify-content: center;">
+  <input type="radio" name="gender" value="Male"> Male
+  <input type="radio" name="gender" value="Female"> Female
+  </div> -->
+  <!-- <div style="display: flex; justify-content: center;">
+  <select name="service">
+    <option value="membership">Membership</option>
+    <option value="training">Training</option>
+  </select>
+  </div> -->
+  <input type="hidden" name="plan" value="Basic">
+  <div style="display: flex; justify-content: center;">
+  <button type="submit">Sign Up</button>
+  </div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+    <div class="container">
+    <img src="./images/logo.png" alt="Logo" class="logo">
+    <nav class="navbar">
+    <ul>
+        <li><a href="./home.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./classes.html">Classes</a></li>
+        <li><a href="./trainers.html">Trainer</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+    </ul>
+    </nav>
+    </div>
+    <div class="butt">
+    <button><a href="./form.html" style="text-decoration: none;">Join Now</a></button>
+    <button><a href="./signup.html" style="text-decoration: none;">Book a Free Trial</a></button>
+    </div>
+    </header>
+
+    <script>
+  document.getElementById("contactForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+
+    try {
+      let res = await fetch("http://localhost:5000/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      let result = await res.json();
+      alert(result.message);
+    } catch (err) {
+      alert("❌ Error submitting form");
+      console.error(err);
+    }
+  });
+</script>
+    
+</body>
+</html>
